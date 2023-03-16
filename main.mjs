@@ -26,7 +26,7 @@ async function downloadScanner() {
 
 function determinePlatform() {
     if (process.env.platform.toString() === 'auto') {
-        let buildSlug = process.env.BITRISE_APP_SLUG
+        let buildSlug = process.env.BITRISE_APP_TITLE
         let platform = buildSlug.split('-').slice(-1).toString()
         console.log('Found platform: ' + platform)
         config.platform = platform
