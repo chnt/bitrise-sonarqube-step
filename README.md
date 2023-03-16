@@ -1,4 +1,4 @@
-# Bitrise ZX starter step
+# Bitrise SonarQube auto-configration and scanning step
 
 ## Bash is hard
 Bitrise step lib normally uses Go or Bash scripting for the step functionality.
@@ -18,10 +18,8 @@ Add this step manually in the bitrise.yml file:
 workflows:
   randomWorkflow:
     steps:
-      - git::https://github.com/monstar-lab-oss/reponame@main:
-        inputs:
-        - some_input: "no"
-        is_always_run: true
+      - git::https://github.com/monstar-lab-oss/bitrise-sonarqube-step@main:
+        ...
 ```
 
 ## Resources
