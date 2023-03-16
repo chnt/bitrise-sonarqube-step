@@ -4,7 +4,7 @@
 set -e
 
 echo -e "Setting up NVM and ZX...\n\n"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash > /dev/null
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash > /dev/null
 
 {
     export NVM_DIR="$HOME/.nvm"
