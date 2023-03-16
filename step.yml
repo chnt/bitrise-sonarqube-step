@@ -57,21 +57,21 @@ inputs:
 - sonar_exclusions: ""
   opts:
     is_expand: false
-    is_required: true
+    is_required: false
     title: "Code analysis exclusion list"
     summary: |
       Comma separated list of exclusions, i.e. **/Translations.java, **/Localizations.swift
 - sonar_coverage_exclusions: ""
   opts:
     is_expand: false
-    is_required: true
+    is_required: false
     title: "Code coverage exclusion"
     summary: |
       Comma separated list of exclusions, i.e. **/Translations.java, **/Localizations.swift
 - build_string: "$BITRISE_GIT_BRANCH"
   opts:
     is_expand: false
-    is_required: true
+    is_required: false
     title: "Build string"
     summary: |
       Identifier for this build. Usually used as a reference for new code. Leave empty to disable.
