@@ -1,0 +1,78 @@
+title: SonarQube auto-configuration and scanner
+summary: Helps configure SonarQube scanner cli and make a succesful scan a breeze
+website: https://github.com/monstar-lab-oss/bitrise-sonarqube-step
+source_code_url: https://github.com/monstar-lab-oss/bitrise-sonarqube-step
+support_url: https://github.com/monstar-lab-oss/bitrise-sonarqube-step/issues
+host_os_tags:
+  - osx-10.10
+project_type_tags: []
+type_tags:
+  - utility
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: true
+deps:
+  brew:
+  - name: git
+  apt_get:
+  - name: git
+run_if: true
+inputs:
+- sonar_token: "$SONAR_TOKEN"
+  opts:
+    is_expand: false
+    is_required: true
+    title: "SonarQube login token"
+- platform: "auto"
+  opts:
+    is_expand: false
+    is_required: true
+    title: "Platform"
+    summary: |
+      Automatically determine platform from the bitrise app name or pick one manually
+    value_options:
+    - "auto"
+    - "ios"
+    - "android"
+    - "flutter"
+- project_key: "$BITRISE_BUILD_SLUG"
+  opts:
+    is_expand: false
+    is_required: true
+    title: "SonarQube project key"
+- coverage_path: ""
+  opts:
+    is_expand: false
+    is_required: false
+    title: "Code coverage report path"
+    summary: |
+      Code coverage report path, i.e. cov.xml
+- scanner_version: "4.8.0.2856"
+  opts:
+    is_expand: false
+    is_required: true
+    title: "Version of the SonarQube scanner cli"
+    summary: |
+      Version of the SonarQube scanner cli
+- sonar_exclusions: ""
+  opts:
+    is_expand: false
+    is_required: true
+    title: "Code analysis exclusion list"
+    summary: |
+      Comma separated list of exclusions, i.e. **/Translations.java, **/Localizations.swift
+- sonar_coverage_exclusions: ""
+  opts:
+    is_expand: false
+    is_required: true
+    title: "Code coverage exclusion"
+    summary: |
+      Comma separated list of exclusions, i.e. **/Translations.java, **/Localizations.swift
+- build_string: "$BITRISE_GIT_BRANCH"
+  opts:
+    is_expand: false
+    is_required: true
+    title: "Build string"
+    summary: |
+      Identifier for this build. Usually used as a reference for new code. Leave empty to disable.
+
