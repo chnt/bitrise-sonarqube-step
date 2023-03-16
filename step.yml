@@ -18,7 +18,7 @@ deps:
   - name: git
 run_if: true
 inputs:
-- sonar_token: "$SONAR_TOKEN"
+- sonar_token: $SONAR_TOKEN
   opts:
     is_expand: false
     is_required: true
@@ -35,7 +35,7 @@ inputs:
     - "ios"
     - "android"
     - "flutter"
-- project_key: "$BITRISE_APP_TITLE"
+- project_key: $BITRISE_APP_TITLE
   opts:
     is_expand: false
     is_required: true
