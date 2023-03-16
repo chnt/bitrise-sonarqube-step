@@ -6,12 +6,12 @@ import * as android from './android.mjs'
 let config = {
     platform: 'ios',
     file_output: 'sonar-project.properties',
-    sonar_token: process.env.sonar_token.toString(),
-    project_key: process.env.project_key.toString() || process.env.BITRISE_APP_TITLE.toString(),
-    coverage_path: process.env.coverage_path.toString(),
-    project_version: process.env.project_version.toString() || '',
+    sonar_token: process.env.sonar_token?.toString() || '',
+    project_key: process.env.project_key?.toString() || process.env.BITRISE_APP_TITLE.toString(),
+    coverage_path: process.env.coverage_path?.toString() || '',
+    project_version: process.env.project_version?.toString() || '',
     scannerDir: '',
-    scannerVersion: process.env.scanner_version || '4.8.0.2856'
+    scannerVersion: process.env.scanner_version?.toString() || '4.8.0.2856'
 }
 
 async function downloadScanner() {
