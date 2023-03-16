@@ -35,7 +35,7 @@ inputs:
     - "ios"
     - "android"
     - "flutter"
-- project_key: "$BITRISE_BUILD_SLUG"
+- project_key: "$BITRISE_APP_TITLE"
   opts:
     is_expand: false
     is_required: true
