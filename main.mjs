@@ -7,7 +7,7 @@ let config = {
     platform: 'ios',
     file_output: 'sonar-project.properties',
     sonar_token: process.env.sonar_token?.toString() || '',
-    project_key: process.env.project_key?.toString() || process.env.BITRISE_APP_TITLE.toString(),
+    project_key: process.env.project_key?.toString() || process.env.BITRISE_APP_TITLE?.toString(),
     coverage_path: process.env.coverage_path?.toString() || '',
     project_version: process.env.project_version?.toString() || '',
     scannerDir: '',
