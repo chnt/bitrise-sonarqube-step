@@ -1,29 +1,5 @@
 #!/usr/bin/env zx
 
-const jacocoGradleFile = `allprojects {
-    buildscript {
-        repositories {
-            mavenCentral()
-            maven {
-                url "https://plugins.gradle.org/m2/"
-            }
-        }
-    }
-
-    apply plugin: 'jacoco'
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.enabled false
-    }
-}
-
-test.finalizedBy jacocoTestReport
-`
-
 export function writeConfiguration(config) {
     console.log('Android.writeConfiguration() -> Generating configuration...')
     let configuration = []
@@ -63,7 +39,5 @@ export function writeConfiguration(config) {
 }
 
 export async function preScan() {
-    fs.outputFileSync('jacoco.gradle', jacocoGradleFile)
-
-    await $`./gradlew --init-script jacoco.gradle`
+    
 }
