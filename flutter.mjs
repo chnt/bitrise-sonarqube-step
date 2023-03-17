@@ -41,5 +41,5 @@ export function writeConfiguration(config) {
 
 export async function preScan() {
     console.log(`Generating coverage file: ${coverageFilePath}`)
-    await $`flutter test — machine — coverage > ${coverageFilePath}`
+    await $`flutter test --machine --coverage > ${coverageFilePath}`
 }

@@ -39,15 +39,15 @@ function determinePlatform() {
 async function runPlatform() {
     switch(config.platform) {
         case 'ios':
-            ios.preScan()
+            await ios.preScan()
             ios.writeConfiguration(config)
         break;
         case 'android':
-            android.preScan()
+            await android.preScan()
             android.writeConfiguration(config)
             break;
         case 'flutter':
-            flutter.preScan()
+            await flutter.preScan()
             flutter.writeConfiguration(config)
             break;
         default:
