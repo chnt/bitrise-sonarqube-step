@@ -20,7 +20,7 @@ run_if: true
 inputs:
 - sonar_token: $SONAR_TOKEN
   opts:
-    is_expand: false
+    is_expand: true
     is_required: true
     title: "SonarQube login token"
 - platform: "auto"
@@ -37,12 +37,12 @@ inputs:
     - "flutter"
 - project_key: $BITRISE_APP_TITLE
   opts:
-    is_expand: false
+    is_expand: true
     is_required: true
     title: "SonarQube project key"
 - coverage_path: ""
   opts:
-    is_expand: false
+    is_expand: true
     is_required: false
     title: "Code coverage report path"
     summary: |
@@ -56,7 +56,7 @@ inputs:
       Version of the SonarQube scanner cli
 - sonar_exclusions: ""
   opts:
-    is_expand: false
+    is_expand: true
     is_required: false
     title: "Code analysis exclusion list"
     summary: |
@@ -70,7 +70,7 @@ inputs:
       Comma separated list of exclusions, i.e. **/Translations.java, **/Localizations.swift
 - build_string: "$BITRISE_GIT_BRANCH"
   opts:
-    is_expand: false
+    is_expand: true
     is_required: false
     title: "Build string"
     summary: |
