@@ -2,6 +2,7 @@
 
 import * as ios from './ios.mjs'
 import * as android from './android.mjs'
+import * as flutter from './flutter.mjs'
 
 let config = {
     platform: 'ios',
@@ -44,6 +45,10 @@ async function runPlatform() {
         case 'android':
             android.preScan()
             android.writeConfiguration(config)
+            break;
+        case 'flutter':
+            flutter.preScan()
+            flutter.writeConfiguration(config)
             break;
         default:
             console.log('default')
