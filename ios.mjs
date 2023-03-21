@@ -41,7 +41,7 @@ export async function preScan() {
     const response = await fetch('https://raw.githubusercontent.com/SonarSource/sonar-scanning-examples/master/swift-coverage/swift-coverage-example/xccov-to-sonarqube-generic.sh')
     const fileContent = await response.text()
     fs.outputFileSync(fileName, fileContent)
-    await $`chmod 755 ` + fileName;
+    await $`chmod 755 ${fileName}`;
     console.log('Done')
 
     console.log('Installing jq via Homebrew...')
