@@ -31,7 +31,7 @@ export function writeConfiguration(config) {
         configuration.push(`sonar.coverageReportPaths = "${config.coverage_path}"`)
     }
 
-    fs.outputFileSync(config.file_output, configuration)
+    fs.outputFileSync(config.file_output, configuration.join('\n'))
 }
 
 export async function preScan() {
