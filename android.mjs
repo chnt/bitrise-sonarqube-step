@@ -1,5 +1,14 @@
 #!/usr/bin/env zx
 
+/** 
+ * List of deafult Android exclusions for both coverage and analyis 
+ */
+const DefaultExclusions = [
+    "**/Translations.java", // nstack
+    "**/src/test/**", // android unit-tests
+    "**/src/androidTest/**" // android instrumental stests
+]
+
 export function writeConfiguration(config) {
     console.log('Android.writeConfiguration() -> Generating configuration...')
     let configuration = []
@@ -15,13 +24,15 @@ export function writeConfiguration(config) {
     configuration.push(`sonar.host.url = https://sonar.monstarlab.io`)
     
     if (process.env.sonar_exclusions) {
-        configuration.push(`sonar.exclusions = "**/Translation.java, ${process.env.sonar_exclusions}"`)
+        configuration.push(`sonar.exclusions = ${DefaultExclusions.join()}, ${process.env.sonar_exclusions}"`)
     } else {
-        configuration.push(`sonar.exclusions = "**/Translation.java"`)
+        configuration.push(`sonar.exclusions = "${DefaultExclusions.join()}`)
     }
     
     if (process.env.sonar_coverage_exclusions) {
-        configuration.push(`sonar.coverage.exclusions = ${process.env.sonar_coverage_exclusions}`)
+        configuration.push(`sonar.coverage.exclusions = ${DefaultExclusions.join()}, ${process.env.sonar_coverage_exclusions}`)
+    } else {
+        configuration.push(`sonar.coverage.exclusions = ${DefaultExclusions.join()}`)
     }
 
     if (process.env.build_string && process.env.build_string.toString().length > 0) {
