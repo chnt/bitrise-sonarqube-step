@@ -31,7 +31,7 @@ export function writeConfiguration(config) {
     configuration.push(`sonar.projectVersion = ${config.project_version}`)
     
     if (config.coverage_path) {
-        configuration.push(`sonar.coverageReportPaths = "${config.coverage_path}"`)
+        configuration.push(`sonar.coverage.jacoco.xmlReportPaths = "${config.coverage_path}"`)
     }
 
     fs.outputFileSync(config.file_output, configuration.join('\n'))
