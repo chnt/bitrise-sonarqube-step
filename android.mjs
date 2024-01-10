@@ -37,6 +37,7 @@ export function writeConfiguration(config) {
 
     if (process.env.build_string && process.env.build_string.toString().length > 0) {
         configuration.push(`sonar.buildString = ${process.env.build_string}`)
+        configuration.push(`sonar.branch.name = ${process.env.build_string}`)
     }
 
     configuration.push(`sonar.projectVersion = ${config.project_version}`)
