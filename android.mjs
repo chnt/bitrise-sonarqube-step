@@ -15,7 +15,7 @@ export function writeConfiguration(config) {
 
     configuration.push(`sonar.projectKey=${config.project_key}`)
     configuration.push(`sonar.sources =.`)
-    configuration.push(`sonar.login = ${config.sonar_token}`)
+    configuration.push(`sonar.token = ${config.sonar_token}`)
     configuration.push(`sonar.binaries = **/build/intermediates/javac/*/classes`)
     configuration.push(`sonar.java.binaries = **/build/intermediates/javac/*/classes`)
     configuration.push(`sonar.c.file.suffixes = -`)
